@@ -1,6 +1,7 @@
 import { Elysia, t } from "elysia";
 import movies from "./movies.json";
 import { SeriesItemDto } from "./types";
+import swagger from "@elysiajs/swagger";
 
 const port = 8080;
 
@@ -38,7 +39,7 @@ const series: SeriesItemDto[] = [
   // Add more series here...
 ];
 
-const app = new Elysia();
+const app = new Elysia().use(swagger());
 
 app
   .get("/", () => ({ message: "Use /movies or /series to get started" }))
