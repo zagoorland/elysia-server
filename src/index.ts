@@ -2,6 +2,8 @@ import { Elysia, t } from "elysia";
 import movies from "./movies.json";
 import { SeriesItemDto } from "./types";
 
+const port = 8080;
+
 const series: SeriesItemDto[] = [
   {
     id: 1,
@@ -101,7 +103,7 @@ app
     }
   );
 
-app.listen(3000);
+app.listen(port);
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
